@@ -19,6 +19,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.autofill.ContentType
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
@@ -78,7 +80,10 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier)
     Box(modifier) {
         Image(
             painter = image,
-            contentDescription = null
+            contentDescription = null,
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop,
+            alpha = 0.5F
         )
 
         GreetingText(
